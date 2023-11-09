@@ -1,0 +1,53 @@
+openapi: 3.0.0
+info:
+  title: Roman Converter API
+  version: 1.0.0
+paths:
+  /romanToInt:
+    post:
+      summary: Convert Roman to Integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                romanNumeral:
+                  type: string
+      responses:
+        '200':
+          description: Successful conversion
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: integer
+        '400':
+          description: Bad Request
+  /intToRoman:
+    post:
+      summary: Convert Integer to Roman
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                integerValue:
+                  type: integer
+      responses:
+        '200':
+          description: Successful conversion
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: string
+        '400':
+          description: Bad Request
