@@ -1,5 +1,8 @@
 export default class romanToIntService{
     public static romanToInt(str: string){
+        if (str === "O") {
+            return 0
+        }
         const map = new Map();
         map.set('I', 1);
         map.set('V', 5);
@@ -14,7 +17,7 @@ export default class romanToIntService{
             map.get(str[i]) >= map.get(str[i + 1]) ? result += map.get(str[i]) : result -= map.get(str[i]);
         }
        if(isNaN(result) || result > 3999) throw new Error('Must be a roman number or inferior to 3999')
-       return {result: result}
+       return result
     }
 
 }

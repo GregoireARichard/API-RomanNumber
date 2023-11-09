@@ -14,6 +14,6 @@ export default class intToRomanService{
             i++;
           }
         }
-        return {result: result};
+        return result;
     }
 }
