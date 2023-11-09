@@ -21,7 +21,6 @@ export default class romanToIntController {
         map.get(str[i]) >= map.get(str[i + 1]) ? result += map.get(str[i]) : result -= map.get(str[i]);
     }
    if(isNaN(result) || result > 3999) throw new Error('Must be a roman number or inferior to 3999')
-    console.log(result)
     res.json({int : result})
     }
     
